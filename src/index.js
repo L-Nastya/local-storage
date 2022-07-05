@@ -220,7 +220,10 @@ const title = document.querySelector(".t")
 const rating = document.querySelector(".r")
 const deleted = document.querySelector(".b")
 const deletedg = document.querySelector(".v")
-
+const deletedU = document.querySelector(".u")
+const deletedK = document.querySelector(".k")
+const deletedL = document.querySelector(".l")
+const deletedD = document.querySelector(".d")
 
 let abc = [];
 const books = [
@@ -343,124 +346,71 @@ const books = [
 // )
 btnCom.addEventListener("click", (e) => {
   const list = localStorage.getItem("watched");
-  try {
-    const listData = list ? JSON.parse(list) : [];
-    listData.push(books[0]);
-    console.log(listData)
-    const updatedList = JSON.stringify(listData);
-    localStorage.setItem("watched", updatedList);
-  } catch (error) {
-    console.log("parsing error");
+    try {
+      const listData = list ? JSON.parse(list) : [];
+      listData.push(books[0]);
+      const updatedList = JSON.stringify(listData);
+      localStorage.setItem("watched", updatedList);
+  
+    } catch (error) {
+      console.log("parsing error");
   }
-//    btnCom.innerHTML = 'удалить'
-//   btnCom.addEventListener("click", () => {
-//     const wa = JSON.parse(localStorage.getItem('watched'));
-//     console.log(wa)
-   
-//    const gf = wa.splice(0, 1)
-//      console.log(wa)
-//     // for (w of wa) {
-//     //    console.log(w)
-//     //    w.splice(0, 1) 
-//     // }
-  
-//     // localStorage.removeItem("watched")
-//  btnCom.innerHTML = 'добавить в хранилище'
-// })
-  
   
 //   // abc.push(books[1])
 //   // localStorage.setItem("watched", JSON.stringify(abc))
 })
 deleted.addEventListener("click", () => {
-  let matches = [];
   const wa = JSON.parse(localStorage.getItem('watched'));
   console.log(wa)
-  //   wa.forEach((item) => {
-  //     // console.log(item)
-  //     books.forEach((item2) => {
-  //               //  console.log(item2)
-  //       if (item.title === item2.title) {
-  //         console.log(item.title) 
-  //          console.log(item2.title)
-  //                 const g = wa.indexOf(item)
-  //                 console.log(g)
-  //                 const gh =  wa.splice(g, 1);
-  //                    console.log(gh)
-  //                 //   matches.push(wa)
-  //                  const updatedList = JSON.stringify(wa);
-  //     localStorage.setItem("watched", updatedList);
-  //                 }
-  //             });
-  //         });
-  // console.log(matches)
-  // const gf = wa.some(value => value === books[0])
-  //  const ghj = Object.values(wa)
-  //   //  console.log(ghj)
-  //    const ghjj = Object.values(books)
-  // // console.log(ghjj)
-  // if (ghj === ghjj) {
-  //   matches.push(ghj)
-  //    console.log(matches)
-  // }
-  // const ghjk = books[0]
-  // console.log(ghjk)
-
-  // for (let foo of wa) {
-  //   // console.log(foo)
-  //   if (foo !== books[0]) {
   const ghjk = books[0]
   const yu = ghjk.title
   console.log(yu)
       const hy = wa.findIndex(option => option.title === yu)
       console.log(hy)
+       if (hy === -1) {
+    console.log("ytn d cgbcrt")
+  }else {
        const hf = wa.splice(hy, 1)
-       console.log(hf)
+    console.log(hf)
     const updatedList = JSON.stringify(wa);
-   localStorage.setItem("watched", updatedList);
-  
-  //     // console.log(books[0])
-  //     // console.log(foo.title)
-  //     // console.log(books[0])
-   
-  //     // const gf = wa.splice(0, 1)
-  //     // console.log(index.target)
-  //     // console.log(wa)
-  //     // const updatedList = JSON.stringify(wa);
-  //     //   localStorage.setItem("watched", updatedList);
-  //   }
-  // }
+    localStorage.setItem("watched", updatedList)
+ 
+  } 
 } 
 )
-deletedg.addEventListener("click", () => {
-  const waa= JSON.parse(localStorage.getItem('watched'));
-  console.log(waa)
-  const ghjka = books[1]
-  const yy = ghjka.title
-  console.log(yy)
-      const hya = waa.findIndex(option => option.title === yy)
-      console.log(hya)
-       const hfa = waa.splice(hya, 1)
-       console.log(hfa)
-    const updatedLista = JSON.stringify(waa);
-   localStorage.setItem("watched", updatedLista);
-})
 btnComa.addEventListener("click", (e) => {
   const list = localStorage.getItem("watched");
-   
     try {
       const listData = list ? JSON.parse(list) : [];
-    
       listData.push(books[1]);
       const updatedList = JSON.stringify(listData);
       localStorage.setItem("watched", updatedList);
+  
     } catch (error) {
       console.log("parsing error");
   }
-
 //   // abc.push(books[1])
 //   // localStorage.setItem("watched", JSON.stringify(abc))
 })
+deletedg.addEventListener("click", () => {
+   const wa = JSON.parse(localStorage.getItem('watched'));
+  console.log(wa)
+    const ghjk = books[1]
+    const yu = ghjk.title
+    console.log(yu)
+    const hy = wa.findIndex(option => option.title === yu)
+  console.log(hy)
+  if (hy === -1) {
+    console.log("ytn d cgbcrt")
+  }else {
+       const hf = wa.splice(hy, 1)
+    console.log(hf)
+    const updatedList = JSON.stringify(wa);
+    localStorage.setItem("watched", updatedList);
+ 
+  } 
+})
+
 btnComd.addEventListener("click", () => {
       const list = localStorage.getItem("watched");
     try {
@@ -470,54 +420,196 @@ btnComd.addEventListener("click", () => {
       localStorage.setItem("watched", updatedList);
     } catch (error) {
       console.log("parsing error");
-    }
+  }
   // abc.push(books[2])
   // localStorage.setItem("watched", JSON.stringify(abc))
 })
+deletedU.addEventListener("click", () => {
+   const wa = JSON.parse(localStorage.getItem('watched'));
+  console.log(wa)
+  const ghjk = books[2]
+  const yu = ghjk.title
+  console.log(yu)
+      const hy = wa.findIndex(option => option.title === yu)
+      console.log(hy)
+       if (hy === -1) {
+    console.log("ytn d cgbcrt")
+  }else {
+       const hf = wa.splice(hy, 1)
+    console.log(hf)
+    const updatedList = JSON.stringify(wa);
+    localStorage.setItem("watched", updatedList);
+ 
+  } 
+})
+btnDra.addEventListener("click", () => {
+       const list = localStorage.getItem("qu");
+    try {
+      const listData = list ? JSON.parse(list) : [];
+      listData.push(books[0]);
+      const updatedList = JSON.stringify(listData);
+      localStorage.setItem("qu", updatedList);
+    } catch (error) {
+      console.log("parsing error");
+    }
+  // localStorage.setItem("qu", JSON.stringify(books[0]))
+})
+deletedD.addEventListener("click", () => {
+   const wa = JSON.parse(localStorage.getItem('qu'));
+  console.log(wa)
+  const ghjk = books[0]
+  const yu = ghjk.title
+  console.log(yu)
+      const hy = wa.findIndex(option => option.title === yu)
+      console.log(hy)
+       if (hy === -1) {
+    console.log("ytn d cgbcrt")
+  }else {
+       const hf = wa.splice(hy, 1)
+    console.log(hf)
+    const updatedList = JSON.stringify(wa);
+    localStorage.setItem("qu", updatedList);
+ 
+  } 
+})
+btnDram.addEventListener("click", () => {
+       const list = localStorage.getItem("qu");
+    try {
+      const listData = list ? JSON.parse(list) : [];
+      listData.push(books[1]);
+      const updatedList = JSON.stringify(listData);
+      localStorage.setItem("qu", updatedList);
+    } catch (error) {
+      console.log("parsing error");
+    }
+  // localStorage.setItem("qu", JSON.stringify(books[1]))
+})
+deletedK.addEventListener("click", () => {
+   const wa = JSON.parse(localStorage.getItem('qu'));
+  console.log(wa)
+  const ghjk = books[1]
+  const yu = ghjk.title
+  console.log(yu)
+      const hy = wa.findIndex(option => option.title === yu)
+      console.log(hy)
+              if (hy === -1) {
+    console.log("ytn d cgbcrt")
+  }else {
+       const hf = wa.splice(hy, 1)
+    console.log(hf)
+    const updatedList = JSON.stringify(wa);
+    localStorage.setItem("qu", updatedList);
+    btnComa.disabled = false;
+ 
+  } 
+})
+btnDrama.addEventListener("click", () => {
+       const list = localStorage.getItem("qu");
+    try {
+      const listData = list ? JSON.parse(list) : [];
+      listData.push(books[2]);
+      const updatedList = JSON.stringify(listData);
+      localStorage.setItem("qu", updatedList);
+    } catch (error) {
+      console.log("parsing error");
+    }
+  // localStorage.setItem("qu", JSON.stringify(books[2]))
+})
+deletedL.addEventListener("click", () => {
+   const wa = JSON.parse(localStorage.getItem('qu'));
+  console.log(wa)
+  const ghjk = books[2]
+  const yu = ghjk.title
+  console.log(yu)
+      const hy = wa.findIndex(option => option.title === yu)
+      console.log(hy)
+              if (hy === -1) {
+    console.log("ytn d cgbcrt")
+  }else {
+       const hf = wa.splice(hy, 1)
+    console.log(hf)
+    const updatedList = JSON.stringify(wa);
+    localStorage.setItem("qu", updatedList);
+    btnComa.disabled = false;
+ 
+  } 
+})
+watchBtn.addEventListener("click", () => {
+  const theme = localStorage.getItem("watched");
+  const fghj = JSON.parse(theme)
+console.log("watched", fghj);
+})
+queueBtn.addEventListener("click", () => {
+  const theme = localStorage.getItem("qu");
+  const fghj = JSON.parse(theme)
+console.log("qu",fghj);
+})
 
-// btnDra.addEventListener("click", () => {
-//        const list = localStorage.getItem("qu");
-//     try {
-//       const listData = list ? JSON.parse(list) : [];
-//       listData.push(books[0]);
-//       const updatedList = JSON.stringify(listData);
-//       localStorage.setItem("qu", updatedList);
-//     } catch (error) {
-//       console.log("parsing error");
+
+
+
+// ФУНКЦИЯ УДАЛЯЕТ ИЗ ОДНОГО И ДОБАВЛЯЕТ В ДРУГОЕ
+
+// btnCom.addEventListener("click", (e) => {
+//   const list = localStorage.getItem("watched");
+//   try {
+//     // const listData = list ? JSON.parse(list) : [];
+//     if (list) {
+//       const wa = JSON.parse(localStorage.getItem('qu'));
+//       const ghjk = books[0]
+//       const yu = ghjk.title
+//       console.log(yu)
+//       const hy = wa.findIndex(option => option.title === yu)
+//       console.log(hy)
+//       if (hy >= 0) {
+//         const hf = wa.splice(hy, 1)
+//         console.log(hf)
+//         const updatedList = JSON.stringify(wa);
+//         localStorage.setItem("qu", updatedList)
+//         const listData = JSON.parse(list)
+//         listData.push(books[0]);
+//         const updatedLista = JSON.stringify(listData);
+//         localStorage.setItem("watched", updatedLista);
+//       } else if (hy === -1) {
+//         const listData = JSON.parse(list)
+//         listData.push(books[0]);
+//         const updatedLista = JSON.stringify(listData);
+//         localStorage.setItem("watched", updatedLista);
+//       }
+//     } else {
+//       const listData = []
 //     }
-//   // localStorage.setItem("qu", JSON.stringify(books[0]))
+//   } catch (error) {
+//     console.log("parsing error");
+//   }
 // })
-// btnDram.addEventListener("click", () => {
-//        const list = localStorage.getItem("qu");
-//     try {
-//       const listData = list ? JSON.parse(list) : [];
-//       listData.push(books[1]);
-//       const updatedList = JSON.stringify(listData);
-//       localStorage.setItem("qu", updatedList);
-//     } catch (error) {
-//       console.log("parsing error");
+
+// ФУНКЦИЯ ПРЕДУПРЕЖДАЕТ О ТОМ ЧТО ФИЛЬМ ЕСТЬ В ДРУГОМ СПИСКЕ
+
+// btnCom.addEventListener("click", (e) => {
+//   const list = localStorage.getItem("watched");
+//   try {
+//     // const listData = list ? JSON.parse(list) : [];
+//     if (list) {
+//       const wa = JSON.parse(localStorage.getItem('qu'));
+//       const ghjk = books[0]
+//       const yu = ghjk.title
+//       console.log(yu)
+//       const hy = wa.findIndex(option => option.title === yu)
+//       console.log(hy)
+//       if (hy >= 0) {
+//         const hf = wa.splice(hy, 1)
+//         alert("уже в списке")
+//       } else {
+//         const listData = JSON.parse(list)
+//         listData.push(books[0]);
+//         const updatedLista = JSON.stringify(listData);
+//         localStorage.setItem("watched", updatedLista);
+//       }
+//     } else {
+//       const listData = []
 //     }
-//   // localStorage.setItem("qu", JSON.stringify(books[1]))
-// })
-// btnDrama.addEventListener("click", () => {
-//        const list = localStorage.getItem("qu");
-//     try {
-//       const listData = list ? JSON.parse(list) : [];
-//       listData.push(books[2]);
-//       const updatedList = JSON.stringify(listData);
-//       localStorage.setItem("qu", updatedList);
-//     } catch (error) {
-//       console.log("parsing error");
-//     }
-//   // localStorage.setItem("qu", JSON.stringify(books[2]))
-// })
-// watchBtn.addEventListener("click", () => {
-//   const theme = localStorage.getItem("watched");
-//   const fghj = JSON.parse(theme)
-// console.log("watched", fghj);
-// })
-// queueBtn.addEventListener("click", () => {
-//   const theme = localStorage.getItem("qu");
-//   const fghj = JSON.parse(theme)
-// console.log("qu",fghj);
+//   } catch (error) {
+//     console.log("parsing error");
+//   }
 // })
